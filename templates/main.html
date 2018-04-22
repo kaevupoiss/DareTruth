@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Python Flask DareTruth</title>
+    <title>Python Flask</title>
   </head>
   <body>
-    <h1>DareTruth</h1>
-    <form action="/dare" method="get">
-      <input type="checkbox" name="level1">
-      <input type="checkbox" name="level2">
+    <h1>Hey</h1>
+    <form action="http://127.0.0.1:5000/" method="GET">
+      <input type="checkbox" name="level" value="1" {{ checked }}>Level 1</input>
+      <input type="submit">New Dare</input>
     </form>
-    {% block body %}{% endblock %}
+    <h1>{{ newdare }}</h1>
   </body>
 </html>
