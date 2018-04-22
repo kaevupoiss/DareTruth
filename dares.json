@@ -1,0 +1,49 @@
+{
+  "levels": [
+    {
+    "level": 1,
+    "dares":
+      [
+      "Dare1.1",
+      "Dare1.2",
+      "Dare1.3"
+      ],
+    "truths":
+      [
+      "Truth1.1",
+      "Truth1.2",
+      "Truth1.3"
+      ]
+    },
+    {
+    "level": 2,
+    "dares":
+      [
+        "Dare2.1",
+        "Dare2.2",
+        "Dare2.3"
+      ],
+    "truths":
+      [
+        "Truth2.1",
+        "Truth2.2",
+        "Truth2.3"
+      ]
+    },
+    {
+    "level": 3,
+    "dares":
+      [
+        "Dare3.1",
+        "Dare3.2",
+        "Dare3.3"
+      ],
+    "truths":
+      [
+        "Truth3.1",
+        "Truth3.2",
+        "Truth3.3"
+      ]
+    }
+  ]
+}
