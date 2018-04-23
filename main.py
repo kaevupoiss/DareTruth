@@ -12,11 +12,13 @@ def dare():
     randq = randint(0, 2)
 
     newdare = ""
-    checked1 = ""
-    checked2 = ""
-    checked3 = ""
-    checked4 = ""
-    checked5 = ""
+    checked = {
+        "1": False,
+        "2": False,
+        "3": False,
+        "4": False,
+        "5": False
+    }
     level = ""
     tod = 'truths'
 
@@ -29,23 +31,10 @@ def dare():
         level = int(request.args.get('level'))
     randq = randint(0, 2)
 
-    if level == 1:
-        newdare = req_data['levels'][level - 1][tod][randq]
-        checked1 = "checked"
-    elif level == 2:
-        newdare = req_data['levels'][level - 1][tod][randq]
-        checked2 = "checked"
-    elif level == 3:
-        newdare = req_data['levels'][level - 1][tod][randq]
-        checked3 = "checked"
-    elif level == 4:
-        newdare = req_data['levels'][level - 1][tod][randq]
-        checked4 = "checked"
-    elif level == 5:
-        newdare = req_data['levels'][level - 1][tod][randq]
-        checked5 = "checked"
+    newdare = req_data['levels'][level - 1][tod][randq]
+    checked[str(level)] = True
 
-    return render_template('main.html', newdare = newdare, checked1 = checked1, checked2 = checked2,  checked3 = checked3, checked4 = checked4, checked5 = checked5)
+    return render_template('main.html', newdare = newdare, checked = checked)
 
 if __name__ == "__main__":
     app.run(debug=True)
