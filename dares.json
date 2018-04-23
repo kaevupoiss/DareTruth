@@ -44,6 +44,36 @@
         "Truth3.2",
         "Truth3.3"
       ]
+    },
+    {
+    "level": 4,
+    "dares":
+      [
+        "Dare4.1",
+        "Dare4.2",
+        "Dare4.3"
+      ],
+    "truths":
+      [
+        "Truth4.1",
+        "Truth4.2",
+        "Truth4.3"
+      ]
+    },
+    {
+    "level": 5,
+    "dares":
+      [
+        "Dare5.1",
+        "Dare3.2",
+        "Dare5.3"
+      ],
+    "truths":
+      [
+        "Truth5.1",
+        "Truth5.2",
+        "Truth5.3"
+      ]
     }
   ]
 }

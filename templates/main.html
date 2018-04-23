@@ -4,13 +4,17 @@
     <title>Python Flask</title>
   </head>
   <body>
-    <h1>Hey</h1>
+    <h1>DareTruth</h1>
     <form action="http://127.0.0.1:5000/" method="GET">
       <input type="radio" name="level" value="1" {{ checked1 }}>Level 1</input>
       <input type="radio" name="level" value="2" {{ checked2 }}>Level 2</input>
       <input type="radio" name="level" value="3" {{ checked3 }}>Level 3</input>
-      <input type="submit"></input>
-    </form>
+      <input type="radio" name="level" value="4" {{ checked5 }}>Level 4</input>
+      <input type="radio" name="level" value="5" {{ checked5 }}>Level 5</input>
+      <br>
+      <input type="submit" name="tod" value="Truth"></input>
+      <p>or</p>
+      <input type="submit" name="tod" value="Dare"></input>
     <h1>{{ newdare }}</h1>
   </body>
 </html>
