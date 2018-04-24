@@ -2,15 +2,24 @@
 <html lang="en">
   <head>
     <title>Python Flask</title>
+    <link href="../static/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <h1>DareTruth</h1>
     <form action="/" method="GET">
-      <input type="radio" name="level" value="1" {% if checked["1"] %} checked {% endif %}>Level 1</input>
-      <input type="radio" name="level" value="2" {% if checked["2"] %} checked {% endif %}>Level 2</input>
-      <input type="radio" name="level" value="3" {% if checked["3"] %} checked {% endif %}>Level 3</input>
-      <input type="radio" name="level" value="4" {% if checked["4"] %} checked {% endif %}>Level 4</input>
-      <input type="radio" name="level" value="5" {% if checked["5"] %} checked {% endif %}>Level 5</input>
+      <div class="level">
+        <input type="radio" name="level" id="one" value="1" {% if checked["1"] %} checked {% endif %}></input>
+        <label for="one" class="level__label">1</label>
+        <input type="radio" name="level" id="two" value="2" {% if checked["2"] %} checked {% endif %}></input>
+        <label for="two" class="level__label">2</label>
+        <input type="radio" name="level" id="three" value="3" {% if checked["3"] %} checked {% endif %}></input>
+        <label for="three" class="level__label">3</label>
+        <input type="radio" name="level" id="four" value="4" {% if checked["4"] %} checked {% endif %}></input>
+        <label for="four" class="level__label">4</label>
+        <input type="radio" name="level" id="five" value="5" {% if checked["5"] %} checked {% endif %}></input>
+        <label for="five" class="level__label">5</label>
+        <div class="level__indicator"></div>
+      </div>
       <br>
       <input type="submit" name="tod" value="Truth"></input>
       <p>or</p>

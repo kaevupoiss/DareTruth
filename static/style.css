@@ -1,0 +1,70 @@
+.level {
+  position: relative;
+  width: 26rem;
+  padding: 0 1rem;
+  font-family: verdana;
+}
+.level:before {
+  content: "  ";
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 3rem;
+  background: #000;
+  border-radius: 30px;
+}
+.level__label {
+  display: inline-block;
+  width: 2.5rem;
+  padding: 0.9rem 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: color 200ms ease-out;
+}
+.level__label:hover {
+  color: white;
+}
+.level__indicator {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  background: blue;
+  border-radius: 50%;
+  transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+  transform: translate3d(1rem, 0, 0);
+}
+.level input#one:checked ~ .level__indicator {
+  background: PaleGreen;
+  transform: translate3d(1.2rem, 0, 0);
+}
+.level input#two:checked ~ .level__indicator {
+  background: PaleTurquoise;
+  transform: translate3d(6.6rem, 0, 0);
+}
+.level input#three:checked ~ .level__indicator {
+  background: MediumTurquoise;
+  transform: translate3d(12rem, 0, 0);
+}
+.level input#four:checked ~ .level__indicator {
+  background: Orange;
+  transform: translate3d(17.4rem, 0, 0);
+}
+
+.level input#five:checked ~ .level__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(22.8rem, 0, 0);
+}
+
+.level input[type=radio]:not(:checked), .level input[type=radio]:checked {
+  display: none;
+}
+
+body {
+  background: #333;
+  color: #999;
+  position: absolute;
+  margin: 40px auto;
+}

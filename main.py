@@ -4,13 +4,13 @@ import json
 app = Flask(__name__)
 
 def get_dares():
-    return json.loads(open("dares.json").read())
+    with open("dares.json", "rb") as dares:
+        return json.load(dares)
 
 @app.route("/")
 def dare():
     req_data = get_dares()
-    randq = randint(0, 2)
-
+    maxitem = 0
     newdare = ""
     checked = {
         "1": False,
@@ -19,20 +19,23 @@ def dare():
         "4": False,
         "5": False
     }
-    level = ""
-    tod = 'truths'
 
+    tod = 'truths'
     if request.args.get('tod') == "Truth":
         tod = 'truths'
     elif request.args.get('tod') == "Dare":
         tod = 'dares'
 
+
+    randq = randint(0, maxitem)
+    level = ""
     if request.args.get('level'):
         level = int(request.args.get('level'))
+        maxitem = len(req_data['levels'][level - 1][tod]) - 1
+        randq = randint(0, maxitem)
+        newdare = req_data['levels'][level - 1][tod][randq]
+        checked[str(level)] = True
     randq = randint(0, 2)
-
-    newdare = req_data['levels'][level - 1][tod][randq]
-    checked[str(level)] = True
 
     return render_template('main.html', newdare = newdare, checked = checked)
 
