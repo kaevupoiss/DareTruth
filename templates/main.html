@@ -5,7 +5,8 @@
     <link href="../static/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>DareTruth</h1>
+    <div class="wrapper">
+    <h1 class="main">DARETRUTH</h1>
     <form action="/" method="GET">
       <div class="level">
         <input type="radio" name="level" id="one" value="1" {% if checked["1"] %} checked {% endif %}></input>
@@ -21,9 +22,13 @@
         <div class="level__indicator"></div>
       </div>
       <br>
-      <input type="submit" name="tod" value="Truth"></input>
-      <p>or</p>
-      <input type="submit" name="tod" value="Dare"></input>
+      <div class="submitwrapper">
+        <input type="submit" name="tod" value="Truth" class="pure-button fuller-button blue"></input>
+        <p class="fuller-button">OR</p>
+        <input type="submit" name="tod" value="Dare" class="pure-button fuller-button red"></input>
+      </div>
+    </form>
     <h1>{{ newdare }}</h1>
+  </div>
   </body>
 </html>
