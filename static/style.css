@@ -31,7 +31,7 @@
   position: absolute;
   top: -0.5rem;
   left: 0;
-  background: blue;
+  background: #00dddd;
   border-radius: 50%;
   transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
   transform: translate3d(1rem, 0, 0);
@@ -73,6 +73,18 @@
   margin: 1em;
   display: inline-block;
   text-transform: uppercase;
+}
+
+.fuller-button.red:focus {
+  outline: none;
+  color: black;
+  transition: color 0s;
+}
+
+.fuller-button.blue:focus {
+  outline: none;
+  color: black;
+  transition: color 0s;
 }
 
 p.fuller-button {
