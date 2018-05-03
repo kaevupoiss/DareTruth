@@ -11,11 +11,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  html {
-    font-size: 14px;
-  }
-
-  body {
+  html, body {
     font-size: 14px;
   }
 }
