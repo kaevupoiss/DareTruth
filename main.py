@@ -35,7 +35,10 @@ def dare():
         randq = randint(0, maxitem)
         newdare = req_data['levels'][level - 1][tod][randq]
         checked[str(level)] = True
-    randq = randint(0, 2)
+        if level > 2:
+            chance = randint(1,101)
+            if chance <= (2 * (level - 2)):
+                newdare = "Special Dare: Remove one piece of clothing"
 
     return render_template('main.html', newdare = newdare, checked = checked)
 
