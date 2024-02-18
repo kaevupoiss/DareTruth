@@ -31,11 +31,9 @@
 			<div class="level__indicator"></div>
 		</div>
 
-		<br />
-
 		<div class="submitwrapper">
 			<input type="submit" name="tod" value="truths" class="pure-button fuller-button blue" />
-			<p class="fuller-button">OR</p>
+			<p>OR</p>
 			<input type="submit" name="tod" value="dares" class="pure-button fuller-button red" />
 		</div>
 	</form>

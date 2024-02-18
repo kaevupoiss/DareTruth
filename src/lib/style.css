@@ -1,13 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-size: 17px;
+  font-size: 16px;
   background: #333;
   color: #999;
-  position: absolute;
+  display: grid;
+  place-items: start center;
+  position: relative;
   font-family: 'Roboto', Arial;
-  height: 100%;
-  width: 100%;
+  height: 100dvh;
+  width: 100vw;
   overflow: hidden;
-  margin: 0;
+}
+
+form {
+  display: contents;
 }
 
 @media (max-width: 640px) {
@@ -17,30 +28,26 @@ body {
 }
 
 .level {
+  display: flex;
+  justify-content: space-around;
   font-size: 0.9rem;
   position: relative;
-  width: 26rem;
   padding: 0 1rem;
   font-family: verdana;
-}
-.level:before {
-  content: "  ";
-  position: absolute;
-  left: 0;
-  z-index: -1;
   width: 100%;
-  height: 3rem;
   background: #000;
   border-radius: 30px;
 }
+
 .level__label {
-  display: inline-block;
+  display: grid;
+  place-items: center;
   width: 2.5rem;
-  padding: 0.9rem 1.2rem;
-  text-align: center;
+  height: 3rem;
   cursor: pointer;
   transition: color 200ms ease-out;
 }
+
 .level__label:hover {
   color: white;
 }
@@ -49,32 +56,32 @@ body {
   height: 4rem;
   position: absolute;
   top: -0.5rem;
-  left: 0;
+  left: 10%;
   background: #00dddd;
   border-radius: 50%;
-  transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
-  transform: translate3d(1rem, 0, 0);
+  transition: left 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+  translate: -50%;
 }
+
 .level input#l1:checked ~ .level__indicator {
   background: #00dddd;
-  transform: translate3d(1.2rem, 0, 0);
+  left: 10%;
 }
 .level input#l2:checked ~ .level__indicator {
   background: #32c2c2;
-  transform: translate3d(6.6rem, 0, 0);
+  left: 30%;
 }
 .level input#l3:checked ~ .level__indicator {
   background: #7e9898;
-  transform: translate3d(12rem, 0, 0);
+  left: 50%;
 }
 .level input#l4:checked ~ .level__indicator {
   background: #bc7676;
-  transform: translate3d(17.4rem, 0, 0);
+  left: 70%;
 }
-
 .level input#l5:checked ~ .level__indicator {
   background: #fb5454;
-  transform: translate3d(22.8rem, 0, 0);
+  left: 90%;
 }
 
 .level input[type=radio]:not(:checked), .level input[type=radio]:checked {
@@ -82,15 +89,20 @@ body {
 }
 
 .fuller-button {
-  color: white;
   background: none;
   border-radius: 0;
-  padding: 1.2rem 3.35rem;
-  letter-spacing: 0.35em;
-  font-size: 0.7em;
+  padding: 1.25rem;
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
-  margin: 1rem;
-  display: inline-block;
+  display: grid;
+  place-items: center;
+  flex: 1 1 0;
+}
+
+.submitwrapper p,
+.fuller-button {
+  color: white;
+  font-size: 0.7em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
 }
 
@@ -104,13 +116,6 @@ body {
   outline: none;
   color: black;
   transition: color 0s;
-}
-
-p.fuller-button {
-  padding: 1.2rem 0rem;
-  text-align: center;
-  display: inline-block;
-  margin: 1rem auto;
 }
 
 .fuller-button.blue {
@@ -136,20 +141,23 @@ p.fuller-button {
 }
 
 .wrapper {
-  width: 28rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 28rem;
+  width: 100%;
+  padding: 4rem 0.5rem;
 }
 
 .submitwrapper {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 h1 {
-  text-align: justify;
   color: white;
 }
 
