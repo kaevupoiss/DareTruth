@@ -1,12 +1,13 @@
 import type { PageServerLoad } from './$types';
 import type { Actions } from './$types';
+import dares from '$lib/dares.json';
 
 export const load: PageServerLoad = (async () => {
     return {};
 })
 
 export const actions = {
-    default: async ({ request, fetch }) => {
+    default: async ({ request }) => {
         const data = await request.formData()
 
         const level = Number(data.get('level'))
@@ -19,8 +20,6 @@ export const actions = {
         if (tod !== 'truths' && tod !== 'dares') {
             return
         }
-
-        const dares = await fetch('dares.json').then(res => res.json())
 
         const levelItems = dares.levels[level - 1]
         const daresToChooseFrom = levelItems[tod]
